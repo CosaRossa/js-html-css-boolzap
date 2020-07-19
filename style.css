@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+/* General */
+small,
+small a {
+  font-weight: 300;
+  font-size: 12px;
+  color: #777;
+}
+
+.padding-flex {
+  padding: 10px 15px 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Chat selezionata */
+.active {
+  background-color: #dcdcdc;
+}
+
+/* Messaggi in entrata e uscita */
+.green-msg,
+.white-msg {
+  padding: 9px 13px 15px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px #ccc;
+  position: relative;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.green-msg {
+  background-color: #C8FAC8;
+  left: 89%;
+}
+
+.white-msg {
+  background-color: #fff;
+  left: 0%;
+}
+
+/* orario messaggi */
+.green-msg .orario,
+.white-msg .orario {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  font-size: 9px;
+  font-weight: 300;
+  color: #999;
+}
+
+/* Sfondo */
+#all {
+  position: relative;
+}
+
+.green {
+  height: 20vh;
+  background-color: #05A094;
+}
+
+.white {
+  height: 80vh;
+  background-color: #cdcccd;
+}
+
+/* Web App */
+#app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1150px;
+  height: 90%;
+  background-color: #f6f6f6;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+#app-left {
+  width: 35%;
+  height: 100%;
+  border-right: 1px solid #bbb;
+  overflow-y: scroll;
+}
+
+#app-right {
+  width: 65%;
+  height: 100%;
+}
+
+/* HEADER dx e sx */
+.header {
+  background-color: #ededed;
+  height: 60px;
+  padding: 0 20px 0 12px;
+}
+
+.header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header-right,
+.header-left {
+  float: left;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-left .header-img-profilo{
+  height: 70%;
+  margin-right: 10px;
+}
+
+.header-left .header-img-profilo img,
+#contatti .avatar img {
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.header-right .icone {
+  width: 100%;
+  text-align: right;
+}
+
+.header-right .icone i {
+  color: #888;
+  padding-right: 10px;
+}
+
+/* Parte SINISTRA */
+/* Notifiche */
+#notifiche {
+  background-color: #93DCFF;
+  height: 70px;
+}
+
+#notifiche .icona-bell {
+  width: 18%;
+}
+
+#notifiche .icona-bell div {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  width: fit-content;
+}
+
+#notifiche .icona-bell div i {
+  color: #93DCFF;
+}
+
+/* Cerca */
+#cerca {
+  width: 100%;
+  padding-top: 8px;
+}
+
+#cerca input {
+  width: 95%;
+  height: 28px;
+  display: block;
+  margin: 0 auto 8px;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px #eee;
+}
+
+#cerca input::placeholder {
+  padding-left: 20px;
+  color: #999;
+}
+
+/* Contatti */
+#contatti .contatto {
+  height: 70px;
+  border-top: 1px solid #ededed;
+  position: relative;
+}
+
+#contatti .avatar {
+  width: 16%;
+  height: 100%;
+}
+
+#contatti .contatto .orario {
+  position: absolute;
+  top: 15%;
+  right: 3%;
+}
+
+/* PARTE dx */
+.chat {
+  height: calc(100% - 120px);
+  overflow-y: scroll;
+  background-color: rgb(251, 240, 227);
+  background-image: url('ballons.jpeg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px 80px 15px;
+}
+
+#tastiera {
+  background-color: #F2EBEB;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#tastiera i {
+  font-size: 21px;
+  color: #888;
+}
+
+#tastiera .text {
+  width: 80%;
+}
+
+#tastiera .text input{
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 13px;
+}
