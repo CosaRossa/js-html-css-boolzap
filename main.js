@@ -1,4 +1,6 @@
 
+var i = 0;
+
 $(document).ready(function () {
 
 });
@@ -6,9 +8,14 @@ $(document).ready(function () {
 $(document).keydown(function () {
 
   if ((event.keyCode == 13) && (msgUtente != "")) {
+    i++;
     var msgUtente = $('#messaggio').val();
+    var chat = $('.chat');
+    chat.append('<div class=\"green-msg\">' + msgUtente +
+    '<div id=\"msg-' + i + '\" class=\"orario\"></div></div>');
     var time = getTime();
-    $('.chat .orario').text(time);
+    $('.chat #msg-' + i).text(time);
+    $('#messaggio').val("");
   }
 });
 

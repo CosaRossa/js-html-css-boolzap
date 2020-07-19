@@ -31,19 +31,19 @@ small a {
   padding: 9px 13px 15px;
   border-radius: 10px;
   box-shadow: 1px 1px 4px #ccc;
-  position: relative;
   width: fit-content;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  position: relative;
 }
 
 .green-msg {
   background-color: #C8FAC8;
-  left: 89%;
+  align-self: flex-end;
 }
 
 .white-msg {
   background-color: #fff;
-  left: 0%;
+  align-self: flex-start;
 }
 
 /* orario messaggi */
@@ -202,6 +202,7 @@ small a {
 }
 
 /* PARTE dx */
+/* Chat */
 .chat {
   height: calc(100% - 120px);
   overflow-y: scroll;
@@ -211,8 +212,11 @@ small a {
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px 80px 15px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Input fondo dx */
 #tastiera {
   background-color: #F2EBEB;
   height: 60px;
