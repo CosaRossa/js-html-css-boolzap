@@ -1,18 +1,40 @@
-
+//differenzio id dei messaggi inviati e ricevuti
+//per avere l'orario di invio di ogni messaggio
 var i = 0;
 var j = 0;
 
-$(document).ready(function () {
+//Ricavo i nomi dei contatti
+var contattiObj = $('#contatti h4');
+var contattiText = [];
+for (var i = 0; i < contattiObj.length; i++) {
+  var getText = contattiObj[i].textContent.toLowerCase();
+  contattiText.push(getText);
+}
 
-});
+$(document).keyup(function () {
+  var msgUtente = $('#messaggio').val();
+  var cercaContatti = $('#cercaContatti').val().toLowerCase();
 
-$(document).keydown(function () {
-  var frasiRandom = ["Certo!", "Anch'io!", "Certo che il babbo è brutto!", "Che schifo la vita.", "Usciamo oggi?", "Cha caldo fa oggi!", "Ho voglia di andare al mare!!", "Pippi è una stellina bellissima!", "Mammiiinaaaaaaaa ci andiamo a prendere un gelatino staseraaa????"];
+  // Cerca nei contatti
+  if ((event.keyCode != undefined) && (cercaContatti != "")){
+    for (var i = 0; i < contattiText.length; i++) {
+      var trovato = contattiText[i].startsWith(cercaContatti);
+      if (!trovato) {
+        $('#' + contattiText[i]).hide();
+      }
+    }
+  } else if (cercaContatti == "") {
+      $('.contatto').show();
+  }
 
+
+  // Risposte random messaggio di risposta
+  var frasiRandom = ["Certo!", "Anch'io!", "Qual è la tua serie preferita?", "Aloaaa", "Usciamo oggi?", "Cha caldo fa oggi!", "Ho voglia di andare al mare!!", "Call it maaagicccc", "Sono lì fra 5 minuti"];
+
+  // Quando premo invio parte il messaggio
   if ((event.keyCode == 13) && (msgUtente != "")) {
     i++;
-    console.log(i);
-    var msgUtente = $('#messaggio').val();
+    console.log(msgUtente);
     var chat = $('.chat');
     chat.append('<div class=\"green-msg\">' + msgUtente +
     '<div id=\"msg-' + i + '\" class=\"orario\"></div></div>');
@@ -30,6 +52,7 @@ $(document).keydown(function () {
       $('.chat #cpu-' + j).text(time);
     }, 1000);
   }
+
 });
 
 
